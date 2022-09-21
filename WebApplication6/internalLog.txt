@@ -1,0 +1,15 @@
+2022-09-21 14:13:25.6880 Info Message Template Auto Format enabled
+2022-09-21 14:13:25.7077 Info Loading assembly: NLog.Web.AspNetCore
+2022-09-21 14:13:25.7451 Info Adding target FileTarget(Name=alldata)
+2022-09-21 14:13:25.7451 Info Adding target FileTarget(Name=otherFile-web)
+2022-09-21 14:13:25.8725 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=C:\Users\tatva\source\repos\WebApplication6\WebApplication6\bin\Debug\net5.0\nlog.config
+2022-09-21 14:18:20.4262 Info Message Template Auto Format enabled
+2022-09-21 14:18:20.4415 Info Loading assembly: NLog.Web.AspNetCore
+2022-09-21 14:18:20.4971 Info Adding target FileTarget(Name=alldata)
+2022-09-21 14:18:20.4971 Info Adding target FileTarget(Name=otherFile-web)
+2022-09-21 14:18:20.5470 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=C:\Users\tatva\source\repos\WebApplication6\WebApplication6\bin\Debug\net5.0\nlog.config
+2022-09-21 14:21:57.9254 Info Message Template Auto Format enabled
+2022-09-21 14:21:57.9374 Info Loading assembly: NLog.Web.AspNetCore
+2022-09-21 14:21:57.9766 Info Adding target FileTarget(Name=alldata)
+2022-09-21 14:21:57.9854 Info Adding target FileTarget(Name=otherFile-web)
+2022-09-21 14:21:58.0151 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=C:\Users\tatva\source\repos\WebApplication6\WebApplication6\bin\Debug\net5.0\nlog.config
