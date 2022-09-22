@@ -26,17 +26,18 @@ namespace WebApplication6.Controllers
         [HttpGet("")]
         public async Task<IActionResult> GetAllBooks()
         {
-            try
-            {
+            //try
+            //{
                 _logger.LogInformation("BooksController.GetAllBooks method called!!!");
                 var books = await bookRepository.GetAllBooksAsync();
-                return Ok(books);
-            }
-            catch(Exception e)
-            {
-                _logger.LogInformation("something went wrong ${e}");
-                return StatusCode(500, "Internal server error");
-            }
+            throw new AccessViolationException("Violation Exception while accessing the resource.");
+            return Ok(books);
+            //}
+            //catch(Exception e)
+            //{
+            //    _logger.LogInformation("something went wrong ${e}");
+            //    return StatusCode(500, "Internal server error");
+            //}
         }
 
         [HttpGet("{id}")]

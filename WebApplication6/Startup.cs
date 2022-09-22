@@ -11,12 +11,14 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+//using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WebApplication6.Data;
+using WebApplication6.Extension;
 using WebApplication6.Models;
 using WebApplication6.Repository;
 
@@ -81,7 +83,8 @@ namespace WebApplication6
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApplication6 v1"));
             }
-
+            //app.ConfigureExceptionHandler(logger);
+            app.ConfigureCustomExceptionMiddleware();
             app.UseHttpsRedirection();
 
             app.UseRouting();
