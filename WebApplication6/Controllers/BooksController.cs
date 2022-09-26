@@ -30,6 +30,7 @@ namespace WebApplication6.Controllers
             //{
                 _logger.LogInformation("BooksController.GetAllBooks method called!!!");
                 var books = await bookRepository.GetAllBooksAsync();
+            //throw new AccessViolationException("Violation Exception while accessing the resource.");
             throw new AccessViolationException("Violation Exception while accessing the resource.");
             return Ok(books);
             //}
@@ -43,53 +44,53 @@ namespace WebApplication6.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetBookById(int id)
         {
-            try
-            {
+            //try
+            //{
                 var book = await bookRepository.GetBookByIdAsync(id);
                 if (book == null)
                     return NotFound();
                 _logger.LogInformation("BookController.GetBookByID method call");
                 return Ok(book);
-            }
-            catch(Exception e)
-            {
-                _logger.LogInformation("something went wrong ${e}");
-                return StatusCode(500, "Internal server error");
-            }
+            //}
+            //catch(Exception e)
+            //{
+            //    _logger.LogInformation("something went wrong ${e}");
+            //    return StatusCode(500, "Internal server error");
+            //}
             
         }
 
         [HttpPost("")]
         public async Task<IActionResult> AddNewBook([FromBody]BookModel bookModel)
         {
-            try
-            {
+            //try
+            //{
                 _logger.LogInformation("BookController.AddNewBook method call");
                 var id = await bookRepository.AddBookAsync(bookModel);
                 return CreatedAtAction(nameof(GetBookById), new { id = id, controller = "Books" }, id);
-            }
-            catch(Exception e)
-            {
-                _logger.LogInformation("something went wrong ${e}");
-                return StatusCode(500, "Internal server error");
-            }
+            //}
+            //catch(Exception e)
+            //{
+            //    _logger.LogInformation("something went wrong ${e}");
+            //    return StatusCode(500, "Internal server error");
+            //}
             
         }
 
         [HttpPost("{id}")]
         public async Task<IActionResult> UpdateBook([FromBody]BookModel bookModel, [FromRoute]int id)
         {
-            try
-            {
+            //try
+            //{
                 _logger.LogInformation("BookController.Search method call");
                 await bookRepository.UpdateBookAsync(id, bookModel);
                 return Ok();
-            }
-            catch (Exception e)
-            {
-                _logger.LogInformation("something went wrong ${e}");
-                return StatusCode(500, "Internal server error");
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    _logger.LogInformation("something went wrong ${e}");
+            //    return StatusCode(500, "Internal server error");
+            //}
             
         }
 
@@ -103,34 +104,34 @@ namespace WebApplication6.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBook([FromRoute]int id)
         {
-            try
-            {
+            //try
+            //{
                 _logger.LogInformation("BookController.Search method call");
                 await bookRepository.DeleteBookAsync(id);
                 return Ok();
-            }
-            catch (Exception e)
-            {
-                _logger.LogInformation("something went wrong ${e}");
-                return StatusCode(500, "Internal server error");
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    _logger.LogInformation("something went wrong ${e}");
+            //    return StatusCode(500, "Internal server error");
+            //}
             
         }
 
         [HttpGet("search/{title}")]
         public async Task<IActionResult> Search([FromRoute]string title)
         {
-            try
-            {
+            //try
+            //{
                 _logger.LogInformation("BookController.Search method call");
                 var books = await bookRepository.Search(title);
                 return Ok(books);
-            }
-            catch (Exception e)
-            {
-                _logger.LogInformation("something went wrong ${e}");
-                return StatusCode(500, "Internal server error");
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    _logger.LogInformation("something went wrong ${e}");
+            //    return StatusCode(500, "Internal server error");
+            //}
             
         }
     }
